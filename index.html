@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Creepy Pizza</title>
+</head>
+
+<body>
+    <div style="text-align:center;">
+        <svg id="pizza" height="400px" width="400px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+       <image x="0" y="0" height="400px" width="400px" xlink:href="img/pizza2.svg" />
+      </svg>
+    </div>
+    <script type="application/javascript">
+        // http://stackoverflow.com/a/15710692/38473
+        var h = window.navigator.userAgent.split("").reduce(function(a, b) {
+            a = ((a << 5) - a) + b.charCodeAt(0);
+            return a & a
+        }, 0);
+        h = Math.abs(h).toString(16);
+        while (h.length < 6) {
+            h = h.slice(1) + h.charAt(0) + h.charAt(0)
+        }
+        var r = (parseInt(h.substring(0, 2), 16) & 127 + 127).toString(16);
+        var g = (parseInt(h.substring(2, 4), 16) & 127 + 127).toString(16);
+        var b = (parseInt(h.substring(4, 6), 16) & 127 + 127).toString(16);
+        document.body.style.backgroundColor = '#' + r + g + b;
+    </script>
+</body>
+
+</html>
